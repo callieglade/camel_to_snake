@@ -11,6 +11,6 @@ def camel_to_snake(file_name)
     end
   end
   output = file.join
-  file_name.gsub(".", "_modified.")
-  File.write(file_name, output)
+  new_file = file_name.gsub(".", "_modified.")
+  File.open(new_file, "w") {|f| f.write output}
 end
